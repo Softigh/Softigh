@@ -1,0 +1,640 @@
+{{ define "main" }}
+<!-- Start index hero -->
+
+<div class="container">
+    <div class="row hero">
+        <div class="hero__left col-md-6 col-sm-12 col-xs-12">
+            <div class="hero_left_1">
+                <h1>It's Time to<br /> <span style="color:#033cfb;">Shine<span
+                            style="color:#000;">,</span>Innovate</span><br><span style="color:#000;">and</span><span
+                        style="color:#033cfb;"> Think Big<span style="color:#000;">.</span></span></h1><br>
+            </div>
+            <div class="hero_left_2">
+                <p>Listening to your needs and answering with an<br> innovative solution.
+                </p>
+            </div>
+            <div class="hero_left_3">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> <button type="button"
+                        class="hero_btn">Get a Quote<img src="/assets/img/index/hero_arrow.png" /></button></a>
+            </div>
+
+        </div>
+        <div class="hero_right col-md-6 col-sm-12 col-xs-12">
+            <img class="img-fluid layer-base" src="/assets/img/index/hero-base.png" alt="" />
+            <img class="img-fluid layer-1" src="/assets/img/index/hero-layer-1.png" alt="" />
+            <img class="img-fluid layer-2" src="/assets/img/index/hero-layer-2.png" alt="" />
+            <img class="img-fluid layer-3" src="/assets/img/index/hero-layer-3.png" alt="" />
+            <img class="img-fluid layer-4" src="/assets/img/index/hero-layer-4.png" alt="" />
+        </div>
+        <script>
+            $(window).on("scroll", function () {
+                var wScroll = $(this).scrollTop();
+                if (wScroll < 50) {
+                    $('.layer-1').css({ 'transform': 'translate(0px, -' + wScroll + 'px)' })
+                    $('.layer-2').css({ 'transform': 'translate(0px, -' + wScroll + 'px)' })
+                    $('.layer-3').css({ 'transform': 'translate(0px, -' + wScroll + 'px)' })
+                    $('.layer-4').css({ 'transform': 'translate(0px, -' + wScroll + 'px)' })
+                }
+                else {
+                    $('.layer-1').css({ 'transform': 'translate(0px, -' + 50 / 1 + 'px)' })
+                    $('.layer-2').css({ 'transform': 'translate(0px, -' + 50 / 1 + 'px)' })
+                    $('.layer-3').css({ 'transform': 'translate(0px, -' + 50 / 1 + 'px)' })
+                    $('.layer-4').css({ 'transform': 'translate(0px, -' + 50 / 1 + 'px)' })
+                }
+            });
+        </script>
+
+    </div>
+</div>
+</div>
+</div>
+</div>
+<!-- End index hero Section -->
+<!-- Start core Values Section -->
+<div class="container-fluid clients_1 pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="clients_head col-md-12 col-sm-12 col-xs-12">
+                <div class="clients_header_heading">
+                    <h1 class="display-5" style="font-weight:600;"><span style="color:#033cfb;">Our</span> Clients
+                    </h1>
+                </div>
+                <div class="clients_heading_para">
+                    <p style="font-size:17px;font-weight:400;">Companies we work with</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="clients_logo">
+                <div class="clients_logo_1">
+
+                    <div class="row slider_client">
+                        <div class="logo-slider_1 ">
+                            {{ range .Site.Data.clients }}
+                            <div class="item_1 clients_logo_1">
+                                <ul class="client_slider">
+
+                                    <li class="list-inline-item col-md-2 col-5"><img class="{{ .class }}"
+                                            src="{{ .src }}"></li>
+                                </ul>
+
+
+                            </div>
+                            {{ end }}
+
+                        </div>
+                    </div>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+                    <script>
+                        $('.logo-slider_1').slick({
+                            slidesToShow: 5,
+                            slidesToScroll: 1,
+                            dots: false,
+                            arrows: true,
+                            autoplayspeed: 2000,
+                            infinite: true,
+                            autoplay: true,
+                            autoplayTimeout: 2000,
+                            autoplayHoverPause: false,
+                            loop: true,
+                            responsive: [
+                                {
+                                    breakpoint: 600,
+                                    settings: {
+                                        slidesToShow: 2,
+                                        slidesToScroll: 1,
+                                        autoplay: true,
+                                        autoplayTimeout: 2000,
+                                        autoplayHoverPause: false,
+
+                                        arrows: false,
+                                    }
+                                }
+                            ]
+                        });
+                    </script>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Start Services Section -->
+<div class="container-fluid services">
+    <div class="container">
+        <div class="row ">
+            <div class="servies_head col-md-6 col-sm-12 col-xs-12">
+                <div class="services_header_heading">
+                    <h1 class="display-5" style="font-weight:600;"><span style="color:#033cfb;">Featured</span>
+                        Services
+                    </h1>
+                </div>
+                <div class="services_heading_para">
+                    <p style="font-size:17px;font-weight:400;">Expertise we deliver</p>
+                </div>
+            </div>
+            <div class="services_button col-md-6 col-sm-12 col-xs-12">
+                <a href="#"><button type="button" class="services_new_btn" style="background:none;">Read More<img
+                            src="assets/img/index/blog_arrow.png" /></button></a>
+            </div>
+        </div>
+        <div class="row mx-auto" style="justify-content: center;margin-top: 65px;">
+            {{ range .Site.Data.services }}
+            <div class="services_left col-md-4 col-sm-12 col-xs-12">
+                <div class="card_img_1"><img class="img-fluid" src="{{ .icon }}"></div>
+                <div class="card_heading_1">
+                    <h4>{{ .title }}</h4>
+                </div>
+                <div class="card_para_1">
+                    <p>{{ .desc }}</p>
+                </div>
+                <div class="card_a" style="margin-top: 40px;"><a href="/services">{{ .LearnMore }}<img
+                            class="services_arrow img-fluid" src="{{ .URL }}"></a>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+<!-- End Services Section -->
+<!-- Start design Section -->
+<div class="fluid-container Design"
+    style="background-image: url('../assets/img/index/design_back.svg');background-repeat: no-repeat;background-position: 95% 96%;">
+    <div class="container">
+        <div class="row design_1 col-reverse">
+            <div class="design_left col-md-6 col-sm-12 col-xs-12" data-aos="fade-right" data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
+                <img class="img-fluid" src="assets/img/index/design_img.svg">
+            </div>
+            <div class="design_right col-md-6 col-sm-12 col-xs-12" data-aos="fade-left"
+                data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="2000">
+
+                <h1 class="mb-dsgn-fnt">We design & build innovative<br>solutions for our<br>trusted partners</h1>
+
+                <p>Experience innovation in a single touch.</p>
+                <a href="#"><button type="button" class="design_btn">Read More<img
+                            src="assets/img/index/design_arrow.png" /></button></a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End design Section -->
+<!-- Start job Section -->
+<div class="container-fluid job_section">
+    <div class="container">
+        <div class="row job_section_1">
+            <div class="job_head col-md-12 col-sm-12 col-xs-12" data-aos="fade-right">
+                <div class="job_header_heading_index">
+                    <h1 class="display-5" style="font-weight:600;font-size:37px;"><span style="color:#033cfb;">Job
+                        </span>Openings
+                    </h1>
+                </div>
+                <div class="job_heading_para">
+                    <p style="font-size:17px;font-weight:400;">We are team of high talented indiviuals<br>looking for
+                        others like us.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="logo-slider">
+                {{ range .Site.Data.job }}
+                <div class="item" data-bs-toggle="modal" data-bs-target="{{ .dataTarget }}">
+                    <div class="card" data-bs-toggle="modal" data-bs-target="{{ .dataTarget }}">
+                        <div class="card_image">
+                            <img src="{{ .card_img }}" alt="">
+                        </div>
+                        <div class="card_heading">
+                            <h3>{{ .card_heading }}</h3>
+                        </div>
+                        <div class="card_learn">
+                            <ul>
+                                <li><a href="#">{{ .learn_more }}</a></li>
+                                <li><a href="#"><img src="{{ .card_arrow }}" alt=""></a></li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                {{ end }}
+
+            </div>
+        </div>
+    </div>
+</div>
+{{ range .Site.Data.job }}
+<div class="modal fade" id="{{ .dataId }}" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body jobs_pop">
+                <button type="button" class="pop_btn" style="background: none;" data-bs-dismiss="modal"><img
+                        src="assets/img/index/cross.svg" id="close_2"></button>
+                <div class="cto_heading">
+                    <h1>{{ .card_heading }}</h1>
+                </div>
+                <div class="job_des">
+                    <p>{{ .job_desc }}</p>
+                    <h1>{{ .sub_heading_1 }}</h1>
+                    <ul>
+                        <li>
+                            <p>{{ .responsiblity_1 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_2 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_3 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_4 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_5 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_6 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_7 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_8 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_9 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_10 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_11 }}</p>
+                        </li>
+                        {{ if or (in .res_quantity "14") (in .res_quantity "18") }}
+                        <li>
+                            <p>{{ .responsiblity_12 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_13 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_14 }}</p>
+                        </li>
+                        {{ if in (.res_quantity) "18" }}
+                        <li>
+                            <p>{{ .responsiblity_15 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_16 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_17 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .responsiblity_18 }}</p>
+                        </li>
+                        {{ end }}
+                        {{ end }}
+                    </ul>
+                    <h1>{{ .sub_heading_2 }}</h1>
+                    <ul>
+                        <li>
+                            <p>{{ .require_1 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_2 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_3 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_4 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_5 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_6 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_7 }}</p>
+                        </li>
+                        {{ if or (in .req_quantity "9") (in .req_quantity "18") }}
+                        <li>
+                            <p>{{ .require_8 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_9 }}</p>
+                        </li>
+                        {{ if in (.req_quantity) "18" }}
+                        <li>
+                            <p>{{ .require_10 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_11 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_12 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_13 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_14 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_15 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_16 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_17 }}</p>
+                        </li>
+                        <li>
+                            <p>{{ .require_18 }}</p>
+                        </li>
+                        {{ end }}
+                        {{ end }}
+                    </ul>
+                </div>
+                <a href="/apply_for_job"> <button type="button" id="job_pop_button">Apply Now</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script>
+    $('.logo-slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        autoplayspeed: 2000,
+        infinite: true,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: false,
+        loop: true,
+        responsive: [
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplayTimeout: 2000,
+                    autoplayHoverPause: false,
+
+                    arrows: false,
+                }
+            }
+        ]
+    });
+</script>
+<!-- End work Section -->
+<!-- Start testimonial Section -->
+<div class="container-fluid testi_section">
+    <div class="container">
+        <div class="row">
+            <div class="testi_head col-md-12 col-sm-12 col-xs-12" data-aos="fade-right">
+                <div class="testi_header_heading">
+                    <h1 class="display-5" style="font-weight:600;font-size:37px;margin-top: 66px;"><span
+                            style="color:#033cfb;">Our </span>Testimoinals
+                    </h1>
+                </div>
+                <div class="testi_heading_para">
+                    <p style="font-size:17px;font-weight:400;">Our clients praise us for our great results,
+                        personable<br />
+                        service, expert knowledge and on-time delivery
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="row ">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="container">
+                <div class="row">
+                    <div class="logo-slider_2">
+                        {{ range .Site.Data.testi }}
+                        <div class="item_1">
+                            <div class="card_4">
+                                <div class="slide_main_1">
+                                    <p>
+                                        {{ .testi_desc }}
+                                    </p>
+                                </div>
+                                <div class="slide_main_2">
+                                    <img src="{{ .avatar }}" />
+                                </div>
+                                <div class="slide_main_3">
+                                    <b>
+                                        <h3>{{ .designation }}</h3>
+                                    </b>
+                                </div>
+                                <div class="slide_main_4">
+                                    <p>{{ .industry }}</p>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        {{ end }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+        <script>
+            $('.logo-slider_2').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: false,
+                arrows: true,
+                autoplayspeed: 2000,
+                infinite: true,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                autoplayHoverPause: false,
+                loop: true,
+                responsive: [
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            autoplay: true,
+                            autoplayTimeout: 2000,
+                            autoplayHoverPause: false,
+
+                            arrows: false,
+                        }
+                    }
+                ]
+            });
+        </script>
+    </div>
+
+
+
+
+
+    <!-- The dots/circles -->
+
+
+
+
+</div>
+
+
+
+
+<!-- End testimonial Section -->
+<!-- Start Blogs Section -->
+<div class="containeter-fluid" style="background:#f2f2f2; padding-bottom: 70px;">
+    <div class="container">
+        <div class="row blog_1">
+            <div class="blog_head col-md-6 col-sm-6 col-xs-6" data-aos="fade-right">
+                <div class="blog_header_heading">
+                    <h1 class="display-5" style="font-weight:600;font-size:37px"><span style="color:#033cfb;">Our
+                        </span>Blogs
+                    </h1>
+                </div>
+                <div class="blog_heading_para">
+                    <p style="font-size:17px;font-weight:400;">What we write?
+                    </p>
+                </div>
+            </div>
+            <div class="blog_right_btn col-md-6 col-sm-6 col-xs-6" data-aos="fade-left">
+                <a href="#"><button type="button" class="blog_btn">Read More<img
+                            src="assets/img/index/blog_arrow.png" /></button></a>
+            </div>
+
+
+        </div>
+        <div class="row blog_row">
+            <div class="blog_left col-md-6 col-sm-12 col-xs-12">
+                <div class="upper" data-aos="fade-down">
+                    <img class="img-fluid blog-img" src="assets/img/index/blog_img_1.svg" />
+                </div>
+                <div class="lower" data-aos="fade-up">
+                    <div class="blog_3_1">
+                        <ul>
+                            <li><img class="img-fluid" src="assets/img/index/calendar.svg" /></li>
+                            <li>
+                                <p>15 Jan 2021</p>
+                            </li>
+                            <li><img class="img-fluid" src="assets/img/index/line2.jpg" /></li>
+                            <li><img class="img-fluid" src="assets/img/index/tag.svg" /></li>
+                            <li>
+                                <p>Web Development</p>
+                            </li>
+                        </ul>
+
+                        <div class="blog_heading">
+                            <h3>How to hire a web developer <br />in 6 easy ways.</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog_left col-md-6 col-sm-12 col-xs-12">
+                <div class="upper" data-aos="fade-down">
+                    <img class="img-fluid blog-img" src="assets/img/index/blog_img_2.svg" />
+                </div>
+                <div class="lower" data-aos="fade-up">
+                    <div class="blog_3_1">
+                        <ul>
+                            <li><img class="img-fluid" src="assets/img/index/calendar.svg" /></li>
+                            <li>
+                                <p>15 Jan 2021</p>
+                            </li>
+                            <li><img class="img-fluid" src="assets/img/index/line2.jpg" /></li>
+                            <li><img class="img-fluid" src="assets/img/index/tag.svg" /></li>
+                            <li>
+                                <p>Web Development</p>
+                            </li>
+                        </ul>
+
+                        <div class="blog_heading">
+                            <h3>How to hire a web developer <br />in 6 easy ways.</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="blog_right_btn_botton col-md-12" data-aos="fade-left">
+            <a href="#"><button type="button" class="blog_btn mx-auto">Read More<img
+                        src="assets/img/index/blog_arrow.png" /></button></a>
+        </div>
+    </div>
+</div>
+<!-- End Blogs Section -->
+<!-- Start queto_mobile Section -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content queto_icon">
+            <div class="modal-body">
+                <div class="queto_mobile_heading">
+                    <h3>Looking for a software development partner?<br />Let's talk</h3>
+                </div>
+                <div class="queto_mobile_btn">
+                    <img src="/assets/img/index/queto_mobile_btn.svg" alt="" class="src">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Start queto Section -->
+<div class="container-fluid">
+    <div class="container">
+        <div class="row queto_main" id="queto" data-aos="zoom-in">
+            <div class="queto_heading">
+                <h1>Looking for a software development partner?<br />Let's talk</h1>
+            </div>
+            <div class="queto_image">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><button type="button"
+                        class="queto_btn">Get a Quote<img src="assets/img/index/queto_arrow.png" /></button></a>
+                <img src="assets/img/index/cross.svg"
+                    style="width: 15px;position: absolute; top: 25px; right: 35px; margin: 0; opacity: 0.6;"
+                    id="close" />
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    $("#close").click(function () {
+        $("#queto").hide();
+        $("#queto_empty_div").hide();
+    });
+
+</script>
+<div class="container-fluid queto_empty_div" id="queto_empty_div">
+    &nbsp;
+</div>
+<!-- Start queto Section -->
+
+<div class="icon" data-toggle="modal" data-target="#exampleModal">
+    <img src="/assets/img/index/chat_icon.svg" id="icon" />
+</div>
+
+{{ end }}
