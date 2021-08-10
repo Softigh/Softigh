@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+media_folder: static/img
+public_folder: /img
+collections:
+
+  - name: 'blogs'
+    label: 'blogs'
+    folder: 'content/blogs'
+    create: true
+    delete: true
+    slug: '{{title}}-{{year}}-{{month}}-{{day}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string'}
+      - { label: 'Draft', name: 'draft', widget: 'hidden', default: false }
+      - { label: 'ShortDescription', name: "desc", widget: "string" }
+      - { label: "Image File", name: "image", widget: "image", required: false }
+      - { label: 'Author', name: "name", widget: "string" }
+      - { label: 'Time', name: "time", widget: "string" }
+      - { label: 'Skills', name: "skills", widget: "string" }
+      - { label: 'Date', name: "date", widget: "string" }
+      - { label: 'Description', name: "description", widget: "string" }
